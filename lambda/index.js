@@ -15,6 +15,7 @@ const intentText2 = 'how many games remaining';
 const helpText = `when is the next game or how many games remaining? Say stop or cancel to exit.`;
 const doneText = 'Go Bearcats - Goodbye!';
 const errorText = "Sorry, I could not understand. Please try again.";
+const victoryText = "Congratulations Bearcats - 2021 Division 2 National Champions!"
 
 // games
 const games = require('./games.json')
@@ -23,7 +24,7 @@ const games = require('./games.json')
 function getNext(now, location) {
     console.log('Entering getNext: ' + now + ' ' + location);
     const ls = (location === null) ? "" : location;
-    let ans = 'There are no more ' + gender + ' ' + sport + ' games in the current schedule. ';
+    let ans = 'There are no more ' + gender + ' ' + sport + ' games in the current schedule. ' + victoryText;
     for (let j = 0; j < games.length; j++) {
         const item = games[j];
         const p = item.gamelocation;
