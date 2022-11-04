@@ -6,7 +6,7 @@
 const Alexa = require('ask-sdk-core');
 
 // constants for our custom skill
-const skillName = 'Bearcat Buddy - Mens basketball';
+const skillName = 'Bearcat Buddy - Mens Basketball';
 const gender = 'Mens';
 const sport = 'Basketball';
 const home = 'home';
@@ -17,7 +17,7 @@ const intentText2 = 'how many games remaining';
 const helpText = `Say when is the next game or how many games remaining? Say stop or cancel to exit.`;
 const doneText = 'Go Bearcats - Goodbye!';
 const errorText = "Sorry, I could not understand. Please try again.";
-const victoryText = "Congratulations Bearcats - 2021 Division 2 National Champions!";
+const victoryText = ""; // "Congratulations Bearcats - 2021 Division 2 National Champions!";
 
 // games
 const games = require('./games');
@@ -75,7 +75,7 @@ function getRemaining(now, location) {
             console.log('ctRemaining=' + ctRemaining + ' ctAways=' + ctAways);
         }
     }
-    if (ctRemaining === 0) { ans = 'There are no ' + gender + ' ' + sport + ' games remaining.'; }
+    if (ctRemaining === 0) { ans = 'There are no ' + gender + ' ' + sport + ' games remaining. ' + victoryText; }
     else if (location === null) { ans = 'There are ' + ctRemaining + ' ' + gender + ' ' + sport + ' games remaining.'; }
     else if (location === home) { ans = 'There are ' + ctHomes + ' ' + gender + ' ' + ls + ' ' + sport + ' games remaining.'; }
     else if (location === away) { ans = 'There are ' + ctAways + ' ' + gender + ' ' + ls + ' ' + sport + ' games remaining.'; }
